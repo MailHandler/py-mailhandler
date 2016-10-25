@@ -16,16 +16,34 @@ class TransactionalAdapter(BaseAdapter):
             'from': from_email,
             'to': to_email,
             'subject': subject,
-            'text_body': text_body,
-            'html_body': html_body,
-            'reply_to': reply_to,
-            'cc': cc,
-            'bcc': bcc,
-            'tag': tag,
-            'headers': headers,
-            'disable_inline': disable_inline,
-            'context': context,
         }
+
+        if text_body:
+            data['text_body'] = text_body
+
+        if html_body:
+            data['html_body'] = html_body
+
+        if reply_to:
+            data['reply_to'] = reply_to
+
+        if cc:
+            data['cc'] = cc
+
+        if bcc:
+            data['bcc'] = bcc
+
+        if tag:
+            data['tag'] = tag
+
+        if headers:
+            data['headers'] = headers
+
+        if disable_inline:
+            data['disable_inline'] = disable_inline
+
+        if context:
+            data['context'] = context
 
         url = self.get_url('/message/send/')
         response = self._post(url=url, data=data)
