@@ -11,7 +11,7 @@ packages = find_packages()
 
 setup(
     name='mailhandler',
-    version='0.0.3',
+    version='0.0.4',
     description='Python adapter for MailHandler.ru API',
     long_description='Python adapter for MailHandler.ru API. Includes bindings for transactional '
                      'mailing and tracking features',
@@ -22,7 +22,7 @@ setup(
     include_package_data=True,
     py_modules=['mailhandler'],
     install_requires=[
-        'requests==2.11.1',
+        'requests>=2.11.1',
     ],
     license='Apache License',
     zip_safe=False,

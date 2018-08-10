@@ -1,6 +1,5 @@
 # coding: utf-8
 from mailhandler.adapters import BaseAdapter
-from mailhandler.exceptions import WrongParamException
 
 
 class TransactionalAdapter(BaseAdapter):
