@@ -9,7 +9,7 @@ class TransactionalAdapter(BaseAdapter):
     name = 'transactional'
 
     def send_email(self, from_email, to_email, subject, text_body=None, html_body=None, reply_to=None, cc=None,
-                   bcc=None, tag=None, headers=None, disable_inline=False, context=None):
+                   bcc=None, tag=None, headers=None, disable_inline=False, context=None, disable_tracking=False):
 
         data = {
             'from': from_email,
@@ -40,6 +40,9 @@ class TransactionalAdapter(BaseAdapter):
 
         if disable_inline:
             data['disable_inline'] = disable_inline
+
+        if disable_tracking:
+            data['disable_tracking'] = disable_tracking
 
         if context:
             data['context'] = context
